@@ -1,4 +1,5 @@
 class Book < ApplicationRecord
+  enum sales_status: { reservation: 0, now_on_sale: 1, end_of_print: 2 }
   belongs_to :publisher
   has_many :book_authors
   has_many :authors, through: :book_authors
